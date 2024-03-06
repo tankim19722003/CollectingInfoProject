@@ -1,6 +1,10 @@
 *{
     font-size: 16px;
 }
+
+.label-dis {
+    margin-right: 10px;
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -12,21 +16,31 @@
     text-align: center;
     font-size: 1.4rem;
 }
+
+.post-content-body,
 .post-information_enter {
     padding-left:50px;
 }
+
+.part-name_label,
+.paragraph_title,
 .post-content-label,
 .post-information_heading{
     font-size: 1.3rem;
-}
-
-.thumbnail-wrap_label,
-.author-wrap_label,
-.title-wrap_label{
     font-weight:bold;
     font-size: 1.1rem;
 }
 
+.thumbnail-wrap_label,
+.author-wrap_label,
+.title-wrap_label,
+.part-name-label,
+.paragraph-label{
+    font-weight:bold;
+    font-size: 1.1rem;
+}
+
+.part-name,
 .thumbnail-wrap_input,
 .author-wrap_input,
 .title-wrap_input{
@@ -35,6 +49,25 @@
     border-radius: 4px;
     border:1px solid #59B3D0;
     font-size: 1.1rem;
+}
+
+.part-name-wrap {
+    margin-bottom: 16px;
+}
+
+.para-wrap {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:10px 0px;
+}
+.part-title {
+    font-size: 1.2rem;
+}
+.para{
+    width:400px;
+    border:1px solid #59B3D0;
+    height:100px;
 }
 
 .author-wrap_input:focus,
@@ -47,9 +80,10 @@
     position:relative;
     padding:20px;
 }
-.add-content {
+.add-part {
     position: fixed;
     right:40px;
+    top: 50%;
     background-color:#0da1a1;
     width:40px;
     height:40px;
@@ -58,11 +92,26 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    cursor: pointer;
 }
-
+.btn-wrap {
+    display: flex;
+    justify-content: center;
+}
+.btn-add-para {
+    width:30px;
+    height:30px;
+    background-color: rgb(13, 161, 161);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 .btn {
     padding:10px 15px;
     background-color: rgb(13, 161, 161);
     border-radius: 10px;
     float: right;
 }
+

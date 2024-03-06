@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p style="font-weight: bold;">Part 1</p>
+    <div class="part" style="display: flex;flex-direction: column;">
+        <label for="">part name</label><input class="part-name" value="Chip snapdragon"></input>
+        <div class="para-list" style="display: flex;flex-direction: column;">
+            <label for="">Đoạn văn</label>
+            <input class="para" value="Đoạn văn 1 part 1"></input>
+            <input class="para" value="Đoạn văn 2 part 1"></input>
+            <input class="para" value="Đoạn văn 3 part 1"></input>
+        </div>
+    </div>
+
+
+    <p style="font-weight: bold;">Part 2</p>
+    <div class="part" style="display: flex;flex-direction: column;">
+        <label for="">part name</label><input class="part-name" value="Điện thoại sử dụng chip này"></input>
+        <div class="para-list" style="display: flex;flex-direction: column;">
+            <label for="">Đoạn văn</label>
+            <input class="para" value="Đoạn văn 1 part 2"></input>
+            <input class="para" value="Đoạn văn 2 part 2"></input>
+            <input class="para" value="Đoạn văn 3 part 2"></input>
+        </div>
+    </div>
+    
+    <p style="font-weight: bold;">Part 3</p>
+    <div class="part" style="display: flex;flex-direction: column;">
+        <label for="">part name</label><input class="part-name" value="Tổng kết"></input>
+        <div class="para-list" style="display: flex;flex-direction: column;">
+            <label for="">Đoạn văn</label>
+            <input class="para" value="Đoạn văn 1 part 3"></input>
+            <input class="para" value="Đoạn văn 2 part 3"></input>
+            <input class="para" value="Đoạn văn 3 part 3"></input>
+        </div>
+    </div>
+    <button style="margin-top:20px" onclick="handleCreatePost()">Create</button>
+    <script>
+        function handleCreatePost() {
+                var parts = document.querySelectorAll(".part");
+                var data = [];
+                let part_list= [];
+                parts.forEach(part => {
+                    part_name = part.querySelector(".part-name").value;
+
+                    var paraNode = part.querySelector(".para-list");
+                    part = {};
+                    part.part_name = part_name;
+
+                    let paragraphs = [];
+                    
+                    let paras = paraNode.querySelectorAll(".para");
+
+                    paras.forEach(para => {
+                        let para_tempt = {};
+                        para_tempt.content = para.value;
+                        paragraphs.push(para_tempt);
+                    });
+                    part.paragraphs = paragraphs;
+                    part_list.push(part)
+                });
+                data.push(part_list);
+                console.log(data);
+
+        }
+    </script>
+</body>
+</html>
